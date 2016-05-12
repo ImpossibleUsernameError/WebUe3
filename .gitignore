@@ -1,0 +1,15 @@
+# IntelliJ
+.idea/
+
+*.iml
+*.iws
+*.class
+
+.classpath
+.settings
+.project
+.tern-project
+
+# Maven
+log/
+target/
