@@ -7,7 +7,8 @@ import java.util.Date;
 public class User {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     private String salutation;
 
@@ -46,6 +47,18 @@ public class User {
     public float getConvertedBalance() {
         float convertedBalance = (float)this.balance;
         return convertedBalance / 100;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public int getBalance() {
+        return balance;
     }
 
     public void decreaseBalance(int amount) {
@@ -110,10 +123,6 @@ public class User {
 
     public String getLastname() {
         return lastname;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public void setSalutation(String salutation) {

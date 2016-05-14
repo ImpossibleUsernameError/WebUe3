@@ -71,7 +71,25 @@ public class JSONDataLoader {
         private String album_name;
         private String artist;
         private String year;
+        private String end_time;
         private String img;
+        private String id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getEnd_time() {
+            return end_time;
+        }
+
+        public void setEnd_time(String end_time) {
+            this.end_time = end_time;
+        }
 
         public String getAlbum_name() {
             return album_name;
@@ -111,7 +129,25 @@ public class JSONDataLoader {
         private String title;
         private String author;
         private String year;
+        private String end_time;
         private String img;
+        private String id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getEnd_time() {
+            return end_time;
+        }
+
+        public void setEnd_time(String end_time) {
+            this.end_time = end_time;
+        }
 
         public String getTitle() {
             return title;
@@ -151,7 +187,25 @@ public class JSONDataLoader {
         private String title;
         private String director;
         private String year;
+        private String end_time;
         private String img;
+        private String id;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getEnd_time() {
+            return end_time;
+        }
+
+        public void setEnd_time(String end_time) {
+            this.end_time = end_time;
+        }
 
         public String getTitle() {
             return title;
