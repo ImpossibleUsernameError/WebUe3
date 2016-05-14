@@ -26,6 +26,7 @@ public class ComputerUserService {
     }
 
     public void start(User user) {
+        System.out.println("start with user: " + user.getEmail());
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> {
             for (Product product : ComputerUserService.this.productService.getAllProducts()) {

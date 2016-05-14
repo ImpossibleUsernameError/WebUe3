@@ -2,22 +2,46 @@ package at.ac.tuwien.big.we16.ue3.model;
 
 import at.ac.tuwien.big.we16.ue3.exception.InvalidBidException;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Entity
 public class Product {
+
+    @Id
     private String id;
+
+    @Column
     private String name;
+
+    @Column
     private String image;
+
+    @Column
     private String imageAlt;
+
+    @Temporal(TemporalType.DATE)
     private Date auctionEnd;
+
+    @Enumerated(EnumType.STRING)
     private ProductType type;
+
+    @Column
     private int year;
+
+    @Column
     private String producer;
+
+    @Column
     private boolean expired;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
     private List<RelatedProduct> relatedProducts;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Bid> bids;
 
     public Bid getHighestBid() {

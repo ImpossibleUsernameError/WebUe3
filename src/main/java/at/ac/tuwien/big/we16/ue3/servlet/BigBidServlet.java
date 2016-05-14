@@ -41,14 +41,14 @@ public class BigBidServlet extends HttpServlet {
         this.productController = new ProductController(ServiceFactory.getProductService(), this.authService, new BidService());
         this.authController = new AuthController(this.authService);
         this.userController = new UserController(userService, this.authService);
-        (new DataGenerator()).generateData();
+        DataGenerator generator = new DataGenerator();
+        generator.generateData();
         //TODO uncomment the following code and possibly change the email address
-//        try {
-//            
-//             ServiceFactory.getComputerUserService().start(userService.getUserByEmail("jane.doe@example.com"));
-//        } catch (UserNotFoundException e) {
-//            // ignore
-//        }
+        try {
+             ServiceFactory.getComputerUserService().start(userService.getUserByEmail("comUser@comUsers.at"));
+           } catch (UserNotFoundException e) {
+           // ignore
+        }
     }
 
     @Override
